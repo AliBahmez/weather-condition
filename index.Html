@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Document</title>
+    <style>
+        hr{
+            height: 3px;
+            background-color: white !important;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+        h4 ,h5 , h6,h1{
+            color: white;
+            font-weight: bold;
+        }        
+        
+    </style>
+</head>
+<body class="bg-info my-5 " style="text-align: center; background-image: linear-gradient(to right, hsl(223.37deg 41.91% 52.75%),hsl(164.63deg 54.75% 56.67%));">
+    <h1 class="mb-5">WEATHER TEMPLATE</h1>
+    <section class="row mx-1 mx-6 gap-4">
+
+        <div class="col card" style="background-color: rgba(0, 0, 0, 0.148);">
+            <h5 class="p-2">LOCAL WEATHER REPORT</h5>
+            <hr>
+            <div class="row mt-6">
+                <div class="col">
+                    <img style="width: 150px;" src="Forecast/sun.png" alt="">
+                    <h6 class="mt-5 time">⏱ 14 KM /H SW</h6></div>
+               
+                <div class="col">
+                    <h4 class="name">SUNDAY</h4>
+                    <h5>SUNNY</h5>
+                    <h4 class="c" style="margin-top: 100px;">22ْ C</h4>
+                    <h4 class="f">71.6ْ F</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col card" style="background-color:  rgba(0, 0, 0, 0.148);">
+            <h5 class="p-2">LOCAL WEATHER REPORT</h5>
+            <hr>
+        </div>
+    </section>
+    <div class="row mx-6 mt-5 " style="background-color:  rgba(0, 0, 0, 0.148);">
+        <div class="col my-4 " style="border-right: 1px solid  rgba(255, 255, 255, 0.549);">
+            <h5 class="name">MONDAY</h5>
+            <img src="Forecast/SunCloud.png" alt="image">
+            <h5  class="mt-5 c">21ْ C</h5>
+            <h5 class="mb-3 f">45.6ْ F</h5>
+        </div>
+        <div class="col my-4" style="border-right: 1px solid  rgba(255, 255, 255, 0.549);">
+            <h5 class="name">TUESDAY</h5>
+            <img src="Forecast/Cloud.png" alt="image">
+            <h5 class="mt-5 c">12ْ C</h5>
+            <h5 class="mb-3 f">21.6ْ F</h5>
+        </div>
+        <div class="col my-4" style="border-right: 1px solid  rgba(255, 255, 255, 0.549);">
+            <h5 class="name">WEDNESDAY</h5>
+            <img src="Forecast/rain.png" alt="image">
+            <h5 class="mt-5 c">32ْ C</h5>
+            <h5 class="mb-3 f">51.6ْ F</h5>
+        </div>
+        <div class="col my-4" style="border-right: 1px solid rgba(255, 255, 255, 0.549);">
+            <h5 class="name">THURSDAY</h5>
+            <img src="Forecast/RainThunder.png" alt="image">
+            <h5 class="mt-5 c">18ْ C</h5>
+            <h5 class="mb-3 f">60.6ْ F</h5>
+        </div>
+        <div class="col my-4" >
+            <h5 class="name">FRIDAY</h5>
+            <img src="Forecast/Snow.png" alt="">
+            <h5 class="mt-5 c">32ْ C</h5>
+            <h5 class="mb-3 f">81.6ْ F</h5>
+        </div>
+    </div>
+    <script>
+        let images = ["Forecast/sun.png","Forecast/SunCloud.png","Forecast/Cloud.png","Forecast/rain.png","Forecast/RainThunder.png","Forecast/Snow.png"]
+        let names = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"];
+        let C =["22ْ C","21ْ C","12ْ C","32 C","18ْ C","32ْ C"]
+        let F =["71.6ْ F","45.6ْ F","21.6ْ F","51.6ْ F","60.6ْ F","81.6ْ F"]
+        let Time =["⏱ 14 KM /H SW","⏱ 12 KM /H SW","⏱ 8 PM /H SW","⏱ 19 KM /H SW","⏱ 1 PM /H SW","⏱ 7 PM /H SW"]
+        let img = document.querySelectorAll('img');
+        let name = document.getElementsByClassName('name');
+        let c = document.getElementsByClassName('c');
+        let f = document.getElementsByClassName('f');
+        let time = document.getElementsByClassName('time');
+        for(let i = 0; i<images.length ; i++){
+            let random = Math.floor(Math.random() * 6);
+            console.log(i);
+            img[i].src=images[random]
+            name[i].textContent=names[random];
+            c[i].textContent = C[random];
+            f[i].textContent = F[random];
+            time[i].textContent = Time[random]
+        }
+        // for(let i = 0; i<names.length ; i++){
+        //     let na = Math.floor(Math.random() * 6);
+        //     console.log(i);
+        // }
+    </script>
+</body>
+</html>
